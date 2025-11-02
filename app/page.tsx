@@ -7,7 +7,7 @@ export default function Home() {
         Passionné par la réponse aux incidents, l’automatisation et la sécurité des systèmes.
       </p>
       <a
-        href="mailto:rayan.gaad@ece.fr"
+        href="mailto:rayan.gaad@edu.ece.fr"
         className="mt-6 text-blue-600 hover:underline"
       >
         Me contacter 📩
