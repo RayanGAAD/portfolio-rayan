@@ -15,6 +15,7 @@ export default function Home() {
           <h1 className="text-2xl font-bold text-blue-600 dark:text-blue-400">Rayan GAAD</h1>
           <ul className="flex items-center space-x-6">
             <li><a href="#cv" className="hover:text-blue-600 dark:text-blue-300 dark:hover:text-blue-400 transition-colors">CV</a></li>
+            <li><a href="#projects" className="hover:text-blue-600 dark:text-blue-300 dark:hover:text-blue-400 transition-colors">Projets</a></li>
             <li><a href="#contact" className="hover:text-blue-600 dark:text-blue-300 dark:hover:text-blue-400 transition-colors">Contact</a></li>
             <li><ThemeToggle /></li>
           </ul>
@@ -54,6 +55,46 @@ export default function Home() {
         >
           📥 Télécharger mon CV (PDF)
         </a>
+      </section>
+
+      {/* 🚀 SECTION PROJETS */}
+      <section id="projects" className="w-full bg-gray-50 dark:bg-gray-800 py-16 px-6 text-center transition-colors">
+        <h2 className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-8">🚀 Mes Projets</h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {/* Projet 1 */}
+          <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition-transform hover:scale-105">
+            <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-2">🔒 Système de détection d’intrusion</h3>
+            <p className="text-gray-700 dark:text-gray-300 text-sm">
+              Projet de cybersécurité en Python basé sur l’analyse de logs réseau pour repérer des comportements suspects.
+            </p>
+            <a href="#" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium mt-4 inline-block">
+              Voir le projet →
+            </a>
+          </div>
+
+          {/* Projet 2 */}
+          <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition-transform hover:scale-105">
+            <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-2">📱 Application mobile de diététique</h3>
+            <p className="text-gray-700 dark:text-gray-300 text-sm">
+              Développement d’une application en React Native pour suivre son alimentation et ses apports nutritionnels.
+            </p>
+            <a href="#" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium mt-4 inline-block">
+              Voir le projet →
+            </a>
+          </div>
+
+          {/* Projet 3 */}
+          <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition-transform hover:scale-105">
+            <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-2">🧠 Reconnaissance faciale (Matlab)</h3>
+            <p className="text-gray-700 dark:text-gray-300 text-sm">
+              Implémentation d’un algorithme PCA pour la détection et la reconnaissance de visages sur des images.
+            </p>
+            <a href="#" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium mt-4 inline-block">
+              Voir le projet →
+            </a>
+          </div>
+        </div>
       </section>
     </main>
   );
