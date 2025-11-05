@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { Worker, Viewer } from '@react-pdf-viewer/core';
 import '@react-pdf-viewer/core/lib/styles/index.css';
-import * as pdfjs from 'pdfjs-dist';
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +12,7 @@ const Home = () => {
   };
 
   // Chemin de ton fichier PDF
-  const pdfUrl = '/CV GAAD RAYAN stage.pdf';
+  const pdfUrl = '/CV_GAAD_RAYAN_stage.pdf';
 
   return (
     <main className="min-h-screen bg-gray-100 text-gray-900 flex flex-col items-center">
@@ -98,10 +97,11 @@ const Home = () => {
 
         {/* Intégration du PDF avec react-pdf */}
         <div style={{ height: '600px' }} className="mt-6">
-          <Worker workerUrl={`https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`}>
-            <Viewer fileUrl={pdfUrl} />
-          </Worker>
+        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
+        <Viewer fileUrl={pdfUrl} />
+        </Worker>
         </div>
+
 
         {/* Lien de téléchargement */}
         <a

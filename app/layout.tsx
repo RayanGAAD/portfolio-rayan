@@ -1,10 +1,12 @@
-import "./globals.css"; // ⚠️ C’est obligatoire et doit être tout en haut !
-
+import "./globals.css"; // ⚠️ Garde-le tout en haut
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Portfolio Rayan GAAD",
   description: "Étudiant en cybersécurité à l’ECE Paris",
+  icons: {
+    icon: "/favicon.ico", // ✅ Le favicon doit être dans public/
+  },
 };
 
 export default function RootLayout({
