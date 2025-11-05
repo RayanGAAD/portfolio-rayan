@@ -2,13 +2,123 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Appliquer un fond uniforme clair/sombre sur tout le site */
-html,
+/* 🌙 Mode clair / sombre */
 body {
-  @apply min-h-screen w-full bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-500;
+  @apply flex flex-col items-center justify-center min-h-screen text-center font-sans transition-colors duration-500 bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white;
 }
 
-/* Centrer le contenu principal */
-body {
-  @apply flex flex-col items-center justify-center text-center font-sans;
+/* 💻 Mode cyberpunk terminal */
+html.terminal body {
+  background: radial-gradient(circle at center, #050505 0%, #000000 80%);
+  color: #00ffcc;
+  font-family: 'JetBrains Mono', monospace;
+  text-shadow: 0 0 10px rgba(0, 255, 204, 0.7);
+  transition: all 0.5s ease;
+}
+
+/* 🔲 Sections globales : fond sombre unifié */
+html.terminal section {
+  background-color: rgba(5, 10, 15, 0.95);
+  color: #00ffcc;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 25px rgba(0, 255, 204, 0.15);
+  margin: 2rem auto;
+  padding: 3rem 2rem;
+  transition: all 0.5s ease;
+}
+
+/* 🧭 Navbar en mode cyber */
+html.terminal nav {
+  background: rgba(0, 0, 0, 0.9);
+  border-bottom: 1px solid #00ffcc;
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
+}
+
+/* ✨ Liens et hover */
+html.terminal a {
+  color: #00ffee;
+  text-decoration: none;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+html.terminal a:hover {
+  color: #00ff99;
+  text-shadow: 0 0 8px #00ffaa;
+}
+
+/* 🧠 Titres */
+html.terminal h1,
+html.terminal h2,
+html.terminal h3 {
+  color: #00ffff;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+  transition: color 0.5s;
+}
+
+/* 📦 Cartes de projets */
+html.terminal .project-card {
+  background: rgba(0, 10, 10, 0.7);
+  border: 1px solid rgba(0, 255, 204, 0.2);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  transition: all 0.4s ease-in-out;
+}
+html.terminal .project-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+}
+
+/* 💡 Curseur clignotant */
+.cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1em;
+  background-color: #00ff66;
+  margin-left: 3px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* 🔧 Correction du fond général en mode cyber */
+html.terminal body,
+html.terminal main {
+  background: radial-gradient(circle at center, #050505 0%, #000000 80%);
+  color: #00ffcc;
+}
+
+/* Supprime tout fond clair restant */
+html.terminal section,
+html.terminal .bg-white,
+html.terminal .bg-gray-50 {
+  background-color: rgba(10, 10, 10, 0.95) !important;
+  color: #00ffcc !important;
+}
+
+/* 🧠 Amélioration de la lisibilité du texte */
+html.terminal p,
+html.terminal a,
+html.terminal li,
+html.terminal span {
+  text-shadow: none !important; /* on supprime le halo néon sur le texte normal */
+  color: #b3fff5 !important; /* couleur plus claire mais nette */
+}
+
+/* On garde le néon uniquement sur les titres */
+html.terminal h1,
+html.terminal h2,
+html.terminal h3 {
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.6), 0 0 24px rgba(0, 255, 255, 0.3);
+  color: #00ffff !important;
+  font-weight: 700;
+}
+
+/* Et on ajuste le contraste des cartes projet */
+html.terminal .project-card {
+  background: rgba(5, 10, 10, 0.9);
+  border: 1px solid rgba(0, 255, 204, 0.25);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
 }

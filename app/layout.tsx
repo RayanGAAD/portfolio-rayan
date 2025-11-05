@@ -1,11 +1,12 @@
-import "./globals.css"; // ⚠️ Garde-le tout en haut
+import "./globals.css";
 import type { Metadata } from "next";
+import CyberBackground from "./CyberBackground"; // 👈 ajoute cette ligne
 
 export const metadata: Metadata = {
   title: "Portfolio Rayan GAAD",
   description: "Étudiant en cybersécurité à l’ECE Paris",
   icons: {
-    icon: "/favicon.ico", // ✅ Le favicon doit être dans public/
+    icon: "/favicon.ico",
   },
 };
 
@@ -16,7 +17,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body>{children}</body>
+      <body className="relative bg-black text-white">
+        {/* 🌌 Fond animé cyber */}
+        <CyberBackground />
+
+        {/* 🧱 Contenu du site au-dessus */}
+        <div className="relative z-10">
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
