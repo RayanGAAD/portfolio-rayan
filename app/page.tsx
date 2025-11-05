@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from "react";
 
 export default function Home() {
@@ -15,19 +17,13 @@ export default function Home() {
           <h1 className="text-2xl font-bold text-blue-600">Rayan GAAD</h1>
           <ul className="flex space-x-6">
             <li>
-              <a href="#about" className="hover:text-blue-600 transition">
-                À propos
-              </a>
+              <a href="#about" className="hover:text-blue-600 transition">À propos</a>
             </li>
             <li>
-              <a href="#projects" className="hover:text-blue-600 transition">
-                Projets
-              </a>
+              <a href="#projects" className="hover:text-blue-600 transition">Projets</a>
             </li>
             <li>
-              <a href="#contact" className="hover:text-blue-600 transition">
-                Contact
-              </a>
+              <a href="#contact" className="hover:text-blue-600 transition">Contact</a>
             </li>
           </ul>
         </div>
