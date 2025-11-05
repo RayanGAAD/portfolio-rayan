@@ -39,11 +39,10 @@ export default function Home() {
       {/* 🏠 SECTION ACCUEIL */}
       <section className="flex flex-col items-center justify-center flex-1 text-center pt-24 px-4">
         <h2 className="text-5xl font-bold mb-4 text-blue-600 dark:text-blue-400 mt-12">
-          Bienvenue 👋
+          Bienvenue 
         </h2>
         <p className="text-lg max-w-2xl">
-          Étudiant en cybersécurité à l’ECE Paris. Passionné par la réponse aux incidents,
-          l’automatisation et la sécurité des systèmes. 💻🔒
+          Étudiant à l’ECE Paris en cybersécurité, je cherche un stage dès avril 2026 pour contribuer à des projets alliant sécurité, innovation et développement. 🚀🔒
         </p>
         <a
           href="#cv"
