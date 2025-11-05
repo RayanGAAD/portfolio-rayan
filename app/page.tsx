@@ -1,13 +1,18 @@
-'use client';
+'use client'; // Nécessaire pour utiliser les hooks React
 
-import { useState } from "react";
+import { useState } from 'react';
+import { Worker, Viewer } from '@react-pdf-viewer/core';
+import '@react-pdf-viewer/core/lib/styles/index.css';
 
-export default function Home() {
+const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleCV = () => {
     setIsOpen(!isOpen);
   };
+
+  // Chemin de ton fichier PDF
+  const pdfUrl = '/CV GAAD RAYAN stage.pdf';
 
   return (
     <main className="min-h-screen bg-gray-100 text-gray-900 flex flex-col items-center">
@@ -68,7 +73,7 @@ export default function Home() {
               <li>Formation à l'ECE Paris - 2025</li>
             </ul>
           </div>
-          
+
           {/* Compétences */}
           <div className="mt-6 bg-white p-6 rounded-lg shadow-lg mb-4">
             <h3 className="text-xl font-semibold">Compétences</h3>
@@ -89,7 +94,25 @@ export default function Home() {
             </ul>
           </div>
         </div>
+
+        {/* Intégration du PDF avec react-pdf */}
+        <div style={{ height: '600px' }} className="mt-6">
+          <Worker workerUrl={`https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`}>
+            <Viewer fileUrl={pdfUrl} />
+          </Worker>
+        </div>
+
+        {/* Lien de téléchargement */}
+        <a
+          href={pdfUrl}
+          download
+          className="mt-4 inline-block text-blue-600 hover:text-blue-800"
+        >
+          Télécharger mon CV (PDF)
+        </a>
       </section>
     </main>
   );
-}
+};
+
+export default Home;
