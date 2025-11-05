@@ -1,5 +1,14 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* Appliquer un fond uniforme clair/sombre sur tout le site */
+html,
 body {
-  @apply flex flex-col items-center justify-center min-h-screen bg-gray-100 text-gray-900 text-center font-sans;
+  @apply min-h-screen w-full bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-500;
+}
+
+/* Centrer le contenu principal */
+body {
+  @apply flex flex-col items-center justify-center text-center font-sans;
 }
