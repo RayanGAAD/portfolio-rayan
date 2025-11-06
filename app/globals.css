@@ -1,87 +1,152 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* 🌞 Mode clair (par défaut) */
+/* =======================================================
+   🌞 MODE CLAIR — sobre, élégant et minimaliste
+   ======================================================= */
 body {
-  @apply flex flex-col items-center justify-center min-h-screen text-center font-sans transition-colors duration-500 bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white;
+  @apply flex flex-col items-center justify-center min-h-screen text-center font-sans transition-colors duration-500 text-gray-800 dark:text-white;
+  font-family: 'Inter', sans-serif !important;
+  background: radial-gradient(circle at center, #f6f8fa 0%, #e9edf2 80%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* Effet binaire discret */
+body::before {
+  content: "010101001011010010101001011010010101010011010";
+  position: fixed;
+  inset: 0;
+  color: rgba(60, 90, 150, 0.05);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  line-height: 16px;
+  white-space: pre-wrap;
+  letter-spacing: 2px;
+  z-index: -1;
+  animation: lightMatrix 40s linear infinite;
+}
+@keyframes lightMatrix {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(100%); }
+}
+
+/* Navbar claire */
+nav {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(10px);
+  color: #1e293b !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+nav a {
+  color: #1e293b !important;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+nav a:hover { color: #2563eb !important; }
+
+/* Titres et texte */
+h1, h2, h3 { color: #1e293b !important; font-weight: 700; letter-spacing: -0.02em; }
+p, li, span { color: #334155 !important; }
+
+/* Liens */
+a { color: #2563eb !important; text-decoration: none; transition: 0.3s; }
+a:hover { color: #1d4ed8 !important; }
+
+/* Sections */
+section {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0.75rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  padding: 4rem 2rem;
 }
 
 /* =======================================================
-   🌙 MODE SOMBRE — style inspiré du mode cyber
+   🌙 MODE SOMBRE — cyberpunk vert néon
    ======================================================= */
-html.dark body,
-html.dark main,
-html.dark section,
-html.dark nav,
-html.dark h1,
-html.dark h2,
-html.dark h3,
-html.dark p,
-html.dark a,
-html.dark li,
-html.dark span,
-html.dark button {
-  font-family: 'JetBrains Mono', monospace !important;
-  color: #00ffcc !important;
-  text-shadow: 0 0 10px rgba(0, 255, 204, 0.6) !important;
-  transition: all 0.4s ease-in-out;
+html.dark body {
+  font-family: 'Inter', sans-serif !important;
+  background: radial-gradient(circle at center, #050505 0%, #000000 80%);
+  color: #00f8c2 !important;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  position: relative;
 }
 
-/* 🧠 Titres en mode sombre */
+/* Effet binaire vert */
+html.dark body::before {
+  content: "0101011010010100110100101010100110010101010";
+  position: fixed;
+  inset: 0;
+  color: rgba(0, 255, 100, 0.1);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 2px;
+  z-index: -1;
+  animation: darkMatrix 25s linear infinite;
+}
+@keyframes darkMatrix {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(100%); }
+}
+
+/* Titres néon (garde l’effet glow) */
 html.dark h1,
 html.dark h2,
 html.dark h3 {
+  color: #00ffff !important;
   font-weight: 700 !important;
-  color: #00ffff !important;
-  text-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 255, 255, 0.3) !important;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.6),
+               0 0 15px rgba(0, 255, 255, 0.3);
 }
 
-/* 💫 Effet spécial sur "Bienvenue" */
-html.dark h2.text-5xl {
-  color: #00ffff !important;
-  text-shadow: 0 0 25px rgba(0, 255, 255, 0.9), 0 0 45px rgba(0, 255, 255, 0.5) !important;
-}
-
-/* ✨ Liens en mode sombre */
-html.dark a {
-  color: #00ffee !important;
-  transition: color 0.3s, text-shadow 0.3s;
-}
-html.dark a:hover {
-  color: #00ff99 !important;
-  text-shadow: 0 0 8px #00ffaa !important;
-}
-
-/* 🧾 Paragraphes et texte sobre */
+/* Paragraphes, liens et texte général — plus net */
 html.dark p,
 html.dark li,
-html.dark span {
-  color: #b3fff5 !important;
+html.dark span,
+html.dark a {
+  color: #aefcf1 !important;
   text-shadow: none !important;
 }
 
-/* 🧭 Navbar */
+/* Liens avec léger effet lumineux au survol */
+html.dark a:hover {
+  color: #00ffd5 !important;
+  text-shadow: 0 0 6px rgba(0, 255, 204, 0.5);
+}
+
+/* Navbar sombre */
 html.dark nav {
-  background-color: #1f2937 !important; /* gris foncé */
+  background-color: #1f2937 !important;
   box-shadow: 0 0 10px rgba(0, 255, 255, 0.15);
 }
 
-/* 💻 Sections générales */
+/* Sections sombres */
 html.dark section {
-  background-color: #111827 !important; /* gris bleuté foncé */
+  background-color: #111827 !important;
   border-radius: 0.75rem;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.08);
+  padding: 4rem 2rem;
 }
 
-/* 🧩 PDF viewer */
-.rpv-core__viewer,
-.rpv-core__inner-pages {
+/* =======================================================
+   🌿 ESPACEMENT ENTRE SECTIONS
+   ======================================================= */
+section + section { margin-top: 6rem; }
+
+/* =======================================================
+   📄 PDF VIEWER
+   ======================================================= */
+.rpv-core__viewer, .rpv-core__inner-pages {
   background-color: transparent !important;
 }
-
 .pdf-container {
   width: 100%;
   height: 700px;
@@ -91,7 +156,48 @@ html.dark section {
   background: transparent;
 }
 
-/* ✨ Transition douce entre clair/sombre */
-html {
-  transition: background-color 0.5s ease, color 0.5s ease;
+/* =======================================================
+   ✨ ANIMATIONS
+   ======================================================= */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+section, h2, h3, p, .project-card {
+  animation: fadeInUp 0.8s ease-in-out both;
+}
+section:nth-of-type(1) { animation-delay: 0.1s; }
+section:nth-of-type(2) { animation-delay: 0.2s; }
+section:nth-of-type(3) { animation-delay: 0.3s; }
+section:nth-of-type(4) { animation-delay: 0.4s; }
+
+/* Animation "Bienvenue" */
+.animate-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid currentColor;
+  animation: typing 2.8s steps(30, end), blink 0.8s step-end infinite;
+}
+@keyframes typing { from { width: 0; } to { width: 100%; } }
+@keyframes blink { 50% { border-color: transparent; } }
+
+/* =======================================================
+   🎨 BOUTON "VOIR MON CV"
+   ======================================================= */
+a.bg-blue-600 {
+  background-color: #2563eb !important;
+  color: white !important;
+  transition: background-color 0.3s;
+}
+a.bg-blue-600:hover { background-color: #1d4ed8 !important; }
+
+html.dark a.bg-blue-600,
+html.dark a.dark\:bg-blue-500 {
+  background-color: #3b82f6 !important;
+  color: #ffffff !important;
+}
+html.dark a.bg-blue-600:hover,
+html.dark a.dark\:bg-blue-500:hover {
+  background-color: #60a5fa !important;
 }
