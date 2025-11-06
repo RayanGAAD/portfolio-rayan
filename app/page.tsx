@@ -252,9 +252,43 @@ export default function Home() {
       </section>
 
       {/* ⚡ FOOTER */}
-      <footer className="w-full py-6 text-center text-sm text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700">
-        © 2025 – Créé par <span className="font-semibold text-blue-600 dark:text-blue-400">Rayan GAAD</span>
-      </footer>
+      {/* 🌐 FOOTER */}
+<footer className="w-full bg-white dark:bg-gray-900 py-6 mt-16 text-center border-t border-gray-200 dark:border-gray-700">
+  <div className="flex justify-center space-x-6 mb-3">
+    {/* LinkedIn */}
+    <a
+      href="https://www.linkedin.com/in/rayan-gaad-864a63280/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="transition-transform hover:scale-110"
+    >
+      <img
+        src="/icons/linkedin.svg"
+        alt="LinkedIn"
+        className="w-8 h-8 filter dark:invert-0"
+      />
+    </a>
+
+    {/* GitHub */}
+    <a
+      href="https://github.com/RayanGaad"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="transition-transform hover:scale-110"
+    >
+      <img
+        src="/icons/github.svg"
+        alt="GitHub"
+        className="w-8 h-8 filter dark:invert"
+      />
+    </a>
+  </div>
+
+  <p className="text-sm text-gray-600 dark:text-gray-400">
+    © 2025 — Crée par <span className="font-semibold">Rayan GAAD</span>
+  </p>
+</footer>
+
     </main>
   );
 }
