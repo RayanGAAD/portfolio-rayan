@@ -242,12 +242,12 @@ export default function Home() {
       {/* 📞 SECTION CONTACT */}
       <section id="contact" className="w-full bg-white dark:bg-gray-800 py-12 text-center transition-colors duration-500">
         <h2 className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-4">Contact</h2>
-        <p className="text-gray-700 dark:text-gray-300">Tu peux me contacter à tout moment sur :</p>
+        <p className="text-gray-700 dark:text-gray-300">Vous pouvez me contacter à tout moment sur :</p>
         <a
           href="mailto:rayan.gaad@edu.ece.fr"
           className="block mt-4 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-semibold"
         >
-          rayan.gaad@edu.ece.fr
+          rayan.gaad@edu.ece.fr 
         </a>
       </section>
 
